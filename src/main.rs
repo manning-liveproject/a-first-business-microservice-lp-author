@@ -11,7 +11,7 @@ async fn handle_request(req: Request<Body>) -> Result<Response<Body>, anyhow::Er
     match (req.method(), req.uri().path()) {
         // Serve some instructions at /
         (&Method::GET, "/") => Ok(Response::new(Body::from(
-            "Try POSTing data to /find_rate such as: `curl localhost:8001/get_rate -XPOST -d '78701'`",
+            "Try POSTing data to /find_rate such as: `curl localhost:8001/find_rate -XPOST -d '78701'`",
         ))),
 
         (&Method::POST, "/find_rate") => {
